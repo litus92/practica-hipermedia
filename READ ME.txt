@@ -1,0 +1,11 @@
+LsMusic és una aplicació web per a buscar i reproduir música online. Les opcions que ofereix aquesta aplicació són bàsicament un buscador que permet filtrar els resultats de busca en cançons, àlbums o artistes, un cop escrit l’element desitjat només haurem de clicar al botó amb una lupa que té al cantó per a que dugui a terme la busca.
+
+A la part esquerra de la interfície gràfica veurem una zona blava on posa ‘Mi lista’. Aquí és on apareixeran els resultats de busca de forma estructurada verticalment.
+
+Cada element d’aquesta llista constarà d’un string i un botó. En el cas que haguem buscat cançons, ens sortirà el nom de la cançó i un botó per a reproduir-la; en el cas que haguem buscat artista, ens sortirà el nom dels artistes que ha trobat i un botó per a poder veure les cançons d’aquest artista; i en el cas que haguem seleccionat la busca d’àlbums, ens sortirà el nom de l’àlbum i un botó per a poder consultar les cançons d’aquest àlbum.
+
+Cal a dir que les cançons que reproduïm no s’escoltaran completament sinó que s’escoltarà un preview de la cançó ja que és el màxim que ens ha ofert la API de Spotify. Quan reproduïm una cançó al requadre de la dreta ens apareixerà la fotografia de l’àlbum juntament amb informació de la cançó just a sota.
+
+A l’hora de reproduir una cançó tenim 3 botons bàsics per a poder controlar-la. Un botó serveix per posar play/pause i els altres dos, un a cada banda, serviran per pujar o baixar el volum de la música dins l’aplicació.
+
+Quan executem l’aplicació per primer cop a la capsa de la dreta de ‘Mi lista’ ens sortiran les cançons més reproduïdes, en aquest cas, de Spotify, però un cop l’usuari comenci a interactuar amb l’aplicació, en aquesta pàgina ens sortiran cançons recomanades per la mateixa aplicació depenent del tipus de música que consulti l’usuari.

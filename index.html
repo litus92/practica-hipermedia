@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>LS-Music</title>
+  <meta name="description" content="Practica Hipermedia La Salle URL">
+  <meta name="author" content="Carlos, Marçal y Andrés">
+  
+<link type="text/css" rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/button.css">
+   
+
+</head>
+
+<body>
+<div id="cabecera">
+	<div id = "divSeleccion">
+		<form>
+		  <input type="radio" name="Busqueda" value="Album" id ="Album"  > Album &nbsp 
+		  <input type="radio" name="Busqueda" value="Artista" id="Artista">  Artista &nbsp 
+		  <input type="radio" name="Busqueda" value="Cancion" id ="Cancion" checked="checked"> Cancion  
+		</form> 
+	</div>
+	<img id = "logo" src="./img/icon.png" alt="LS music" height="100%">
+	<div id = "divBuscador">
+		<input type="text" id="textoBuscador" name="buscador">
+		<button id="botonBuscador" type="button"><img id = "buttonImage" src="./img/Search.png" height="100%"></button>
+	</div>
+	
+	
+</div>
+
+<div id="nav1" style="overflow-y: scroll">
+<h2>Mi Lista</h2>
+
+</div>
+<div id="nav2" style="overflow-y: scroll">
+<h2>Canciones Recomendadas</h2>
+
+</div>
+
+<div id="section">
+<h1>REPRODUCTOR</h1>
+
+</div>
+
+<div id = "rep">
+ <div id="DatosCancion">
+	 <table>
+		 <td> <tr>Cancion:</tr> <tr> <span id="DetailCancion"> </span> </tr> &nbsp &nbsp &nbsp &nbsp 
+		 <tr> Artista:</tr> <tr> <span id="DetailArtista"> </span></tr></td><br>
+		 <td> <tr> Album:</tr> <tr> <span id="DetailAlbum"> </span></tr></td>
+	 </table>
+ </div>
+  <div id="audioContainer">
+	<div class="toggle2" id = "bDown">
+		<input type="checkbox" checked>
+		<span class="button"></span>
+		<span class="label">-</span>
+	</div>
+	<div class="toggle" id = "bPlay">
+		<input type="checkbox">
+		<span class="button"></span>
+		<span class="label">&#9658</span>
+		<audio autoplay=true id="player"src=""></audio> 
+		<div id="image"></div>
+
+	</div>
+	<div class="toggle2" id = "bUp">
+		<input type="checkbox" checked>
+		<span class="button"></span>
+		<span class="label">+</span>
+	</div>
+  </div>
+ </div>
+
+<div id="footer">
+Marsal Carlos Andres
+</div>
+
+</body>
+   <script src="js/lsmusic.js"></script>
+
+</html>

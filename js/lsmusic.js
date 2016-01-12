@@ -2,8 +2,6 @@ function LsMusic(){
 
 	var MusicRecommender = {
 
-		
-
 		numElements:0,
 		response:'',
 		searchType:'',
@@ -12,7 +10,6 @@ function LsMusic(){
 		DetailCancion : "",
 		DetailArtista : "",
 		DetailAlbum : "",
-		//INFO TRACK
 		//array con los IDs de las canciones
 		songIds:[],
 
@@ -45,8 +42,6 @@ function LsMusic(){
 
 		clearResults : function(){
 			document.getElementById('nav1').innerHTML = "<h2>Mi Lista</h2>";
-			//document.getElementById('back').innerHTML = "";
-
 		},
 		getArtista :function(){
 			return this.DetailArtista;
@@ -126,7 +121,6 @@ function LsMusic(){
 
 			var a = document.createElement('ul');
 			
-			//Track
 			if(document.getElementById("Cancion").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.tracks.items.length;
@@ -150,8 +144,6 @@ function LsMusic(){
 				}
 			}
 
-
-			//Artist
 			if(document.getElementById("Artista").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.artists.items.length;
@@ -161,7 +153,6 @@ function LsMusic(){
 				}
 			}
 
-			//Album
 			if(document.getElementById("Album").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.albums.items.length;
@@ -182,7 +173,6 @@ function LsMusic(){
 
 			var a = document.createElement('ul');
 			
-			//Track
 			if(document.getElementById("Cancion").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.tracks.items.length;
@@ -206,8 +196,6 @@ function LsMusic(){
 				}
 			}
 
-
-			//Artist
 			if(document.getElementById("Artista").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.artists.items.length;
@@ -217,7 +205,6 @@ function LsMusic(){
 				}
 			}
 
-			//Album
 			if(document.getElementById("Album").checked == true){
 				//guardamos cuantos elementos hay en el json recibido
 				this.numElements = this.response.albums.items.length;
@@ -225,7 +212,6 @@ function LsMusic(){
 				for(var i = 0; i < this.numElements; i++){
 					var text = this.response.albums.items[i].name;
 					a.innerHTML += "<div id='element'><li id='" + i + "'>" + text + "</li> <img src='img/more.png' id=m" + i + "> </div>";
-					//guardamos el id de cada album de la lista
 					this.albumID[i] = this.response.albums.items[i].id;
 			
 				}
@@ -242,7 +228,6 @@ function LsMusic(){
 			var artista = MusicRecommender.getArtista();
 			var album = MusicRecommender.getAlbum();
 			var cancion = MusicRecommender.getCancion();
-			//En la variable i nos guardamos el id del link que nos han hecho click
 			var idButton = r;
 			idButton = idButton.substr(1);
 			var Song = MusicRecommender.getSongIDs();
@@ -257,11 +242,9 @@ function LsMusic(){
 			album = json.album.name;
 			cancion = json.name;
 
-			Data.save(artista);
+			//Data.save(artista);
 			//this.albumImg = json.artists[1].url;
 			
-
-			//Creamos el nuevo contenido que tenemos que embeber
 			var img = document.createElement("img");
 			
 			var i = '';
@@ -281,8 +264,6 @@ function LsMusic(){
 			}
 			img.src = i;
 			img.id = 'albumPhoto';
-
-			//var preview = response.tracks.items[idButton].preview_url;
 
 			var nombre = MusicRecommender
 			var preview = MusicRecommender.getPreview();
@@ -317,7 +298,6 @@ function LsMusic(){
 				
 			});
 
-			//tecla enter per buscar. 
 			document.onkeydown = function (a){
 				if(a.keyCode === 13){
 					MusicRecommender.clearResults();
@@ -361,10 +341,7 @@ function LsMusic(){
 				});
 			}
 
-
 		},
-
-
 
 		playButtonListener: function (type, json2, json1){
 			
@@ -384,15 +361,6 @@ function LsMusic(){
 				bt.addEventListener('click', function(){
 					
 					Player.loadSong(this.id);
-					//Data.save(json2, json1);
-					//le pasamos json1 porque nos interesa guardar la img de los albums
-					//Data.saveDB(json1);
-
-					//MusicRecommender.detail(Data.getSongTitle(), Data.getArtist(), Data.getAlbum());
-					//var listaArtistas = MusicRecommender.buscarRecomendaciones(Data.getidArtist());
-					//MusicRecommender.addRecommended(listaArtistas);
-					//ListenUserActions.recomButtonListener(listaArtistas.artists.length, listaArtistas);
-
 
 				});
 			}
@@ -400,15 +368,14 @@ function LsMusic(){
 		},
 
 	}
-	var Data = {
+	/*var Data = {
 		save:function(artist){
 			// guardar en JSON
 		}
 		get:function(){
 			// Cargar JSON
 		}
-	}
-	
+	}*/
 
 	ListenUserActions.searchButtonListener();
 	var btnplay = document.getElementById('bPlay');
@@ -438,6 +405,7 @@ function LsMusic(){
 				});
 				MusicRecommender.search("greatest hits", "track");
 	    MusicRecommender.listRecomendedIni();
+	    ListenUserActions.playButtonListener("Cancion");
 }
 
 document.addEventListener("DOMContentLoaded",LsMusic(),false);
